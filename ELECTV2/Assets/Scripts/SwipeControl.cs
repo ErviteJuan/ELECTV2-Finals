@@ -13,7 +13,6 @@ public enum SwipeDirection
 public class SwipeControl : MonoBehaviour
 {
     public static System.Action<SwipeDirection> SwipeAction;
-    public Collider2D objectCollider;
     Vector2 Origin;
     Vector2 End;
     Vector2 SwipeDir;
@@ -27,14 +26,11 @@ public class SwipeControl : MonoBehaviour
             //Checks if the initial mouse position connects with the 2D Collider
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                Origin = Input.mousePosition;
-                Origin.x /= Screen.width;
-                Origin.y /= Screen.height;
-
-            if (objectCollider.OverlapPoint(mousePosition))
-            {
-                isSwiping = true;
-            }
+            Origin = Input.mousePosition;
+            Origin.x /= Screen.width;
+            Origin.y /= Screen.height;
+            
+            isSwiping = true;          
         }
         else if (Input.GetMouseButton(0) && isSwiping)
         {
@@ -52,20 +48,20 @@ public class SwipeControl : MonoBehaviour
                 if (Mathf.Abs(SwipeDir.x) > Mathf.Abs(SwipeDir.y))
                 {
                     if (SwipeDir.x > 0)
-                        Debug.Log("Right");
-                    //CallSwipeAction(SwipeDirection.Right);
+                        //Debug.Log("Right");
+                    CallSwipeAction(SwipeDirection.Right);
                     else
-                        Debug.Log("Left");
-                    //CallSwipeAction(SwipeDirection.Left);
+                        //Debug.Log("Left");
+                    CallSwipeAction(SwipeDirection.Left);
                 }
                 else
                 {
                     if (SwipeDir.y > 0)
-                        Debug.Log("Up");
-                    //CallSwipeAction(SwipeDirection.Up);
+                        //Debug.Log("Up");
+                    CallSwipeAction(SwipeDirection.Up);
                     else
-                        Debug.Log("Down");
-                    //CallSwipeAction(SwipeDirection.Down);
+                        //Debug.Log("Down");
+                    CallSwipeAction(SwipeDirection.Down);
                 }
             }
         }
