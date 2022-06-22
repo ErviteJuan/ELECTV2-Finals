@@ -7,6 +7,9 @@ public class Layout : MonoBehaviour
     public Stick storeStick;
     public Ingredient storeIngredient;
     public Collider2D ColliderSource;
+    public GameObject Grill;
+    public GameObject Table;
+    public GameObject CreatedFood;
     [SerializeField] AddIngredient PileStick;
     [SerializeField] AddIngredient PileBanana;
     [SerializeField] AddIngredient PileKamote;
@@ -30,6 +33,7 @@ public class Layout : MonoBehaviour
         if (storeIngredient == null)
         {
             Debug.Log("Added " + _i.IngredientName);
+            CreatedFood = Instantiate(_i.IngrdientPiece, new Vector3(0.2f, -3.3f, 0f), Quaternion.identity);
             storeIngredient = _i;
         }
     }
@@ -44,18 +48,22 @@ public class Layout : MonoBehaviour
                 if (storeIngredient.ID == 1)
                 {
                     Debug.Log("Sent Kamote");
+                    CreatedFood.transform.position = Grill.transform.position;
                 }
                 else if (storeIngredient.ID == 2)
                 {
                     Debug.Log("Sent Banana");
+                    CreatedFood.transform.position = Grill.transform.position;
                 }
                 storeIngredient = null;
                 storeStick = null;
+                CreatedFood = null;
+                
             }
             else
             {
                 Debug.Log("Incomplete!");
             }
-        }
+        } 
     }
 }

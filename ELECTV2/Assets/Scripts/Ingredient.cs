@@ -7,4 +7,5 @@ public class Ingredient : ScriptableObject
 {
     public int ID;
     public string IngredientName;
+    public GameObject IngrdientPiece;
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   IngredientName: Stick
+  IngrdientPiece: {fileID: 541022051129334134, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}

@@ -29,11 +29,15 @@ public class AddIngredient : MonoBehaviour
         if (Source.OverlapPoint(mousePosition))
         {
             if (_dir == SwipeDirection.Left && SwipeLeft)
+            {
                 //Debug.Log("added " + Ingredient.IngredientName + " with " + _dir + " direction");
                 EvtAddFood.Invoke(Ingredient);
+            }
             else if (_dir == SwipeDirection.Right && !SwipeLeft)
+            {
                 //Debug.Log("added " + Ingredient.IngredientName + " with " + _dir + " direction");
                 EvtAddFood.Invoke(Ingredient);
+            }
         }
     }
 

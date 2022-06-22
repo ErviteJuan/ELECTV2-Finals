@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   IngredientName: Banana
+  IngrdientPiece: {fileID: 1368569644744841983, guid: 7e29ffe7f996835438998beb6ed41938, type: 3}
