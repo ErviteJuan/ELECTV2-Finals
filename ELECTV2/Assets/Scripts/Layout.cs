@@ -7,16 +7,16 @@ public class Layout : MonoBehaviour
     public Stick storeStick;
     public Ingredient storeIngredient;
     public Collider2D ColliderSource;
-    public GameObject Grill;
     public GameObject Table;
-    public GameObject CreatedFood;
+    GameObject CreatedFood;
+    int CurrentlyInGrill;
     [SerializeField] AddIngredient PileStick;
     [SerializeField] AddIngredient PileBanana;
     [SerializeField] AddIngredient PileKamote;
 
     private void Start()
     {
-        SwipeControl.SwipeAction += SendToFry; 
+        SwipeControl.SwipeAction += SendToFry;
     }
 
     public void AddStick(Stick _s)
@@ -33,7 +33,7 @@ public class Layout : MonoBehaviour
         if (storeIngredient == null)
         {
             Debug.Log("Added " + _i.IngredientName);
-            CreatedFood = Instantiate(_i.IngrdientPiece, new Vector3(0.2f, -3.3f, 0f), Quaternion.identity);
+            CreatedFood = Instantiate(_i.IngrdientPiece, new Vector2(0.2f, -3.3f), Quaternion.identity);
             storeIngredient = _i;
         }
     }
@@ -45,19 +45,28 @@ public class Layout : MonoBehaviour
         {
             if (storeStick != null && storeIngredient != null)
             {
-                if (storeIngredient.ID == 1)
+                if(CurrentlyInGrill < 3)
                 {
-                    Debug.Log("Sent Kamote");
-                    CreatedFood.transform.position = Grill.transform.position;
+                    if (storeIngredient.ID == 1)
+                    {
+                        Debug.Log("Sent Kamote");
+                        CreatedFood.transform.position = new Vector2(Random.Range(-4.08f, 4.68f), Random.Range(-1.29f, 2.21f));
+                        CurrentlyInGrill += 1;
+                    }
+                    else if (storeIngredient.ID == 2)
+                    {
+                        Debug.Log("Sent Banana");
+                        CreatedFood.transform.position = new Vector2(Random.Range(-4.08f, 4.68f), Random.Range(-1.29f, 2.21f));
+                        CurrentlyInGrill += 1;
+                    }
+                    storeIngredient = null;
+                    storeStick = null;
+                    CreatedFood = null;
                 }
-                else if (storeIngredient.ID == 2)
+                else
                 {
-                    Debug.Log("Sent Banana");
-                    CreatedFood.transform.position = Grill.transform.position;
-                }
-                storeIngredient = null;
-                storeStick = null;
-                CreatedFood = null;
+                    Debug.Log("Grill is Full");
+                }    
             }
             else
             {

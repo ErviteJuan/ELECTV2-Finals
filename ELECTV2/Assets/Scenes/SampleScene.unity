@@ -827,9 +827,7 @@ MonoBehaviour:
   storeStick: {fileID: 0}
   storeIngredient: {fileID: 0}
   ColliderSource: {fileID: 1482212644}
-  Grill: {fileID: 1649992211}
   Table: {fileID: 0}
-  CreatedFood: {fileID: 0}
   PileStick: {fileID: 532465246}
   PileBanana: {fileID: 813800781}
   PileKamote: {fileID: 1223637265}
