@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 954035350863645829}
   - component: {fileID: 8490683113444444715}
   - component: {fileID: -8371876232362728423}
+  - component: {fileID: 8925904763192611222}
+  - component: {fileID: -2718040430518605214}
   m_Layer: 0
   m_Name: Kamote Piece
   m_TagString: Kamote
@@ -97,7 +99,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -134,6 +136,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8925904763192611222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156791848954842182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd57e461170d56444be5cd83a12189a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodCollider: {fileID: 8490683113444444715}
+  Timer: 0
+  FryPhase: 10
+  FryLimit: 25
+  IsFrying: 0
+--- !u!114 &-2718040430518605214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156791848954842182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35455e315e65ca544ba7405b9e695670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FryTimer: {fileID: 0}
+  GrillCollider: {fileID: 0}
 --- !u!1001 &1537862162467258628
 PrefabInstance:
   m_ObjectHideFlags: 0

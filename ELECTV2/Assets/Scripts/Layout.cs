@@ -58,7 +58,6 @@ public class Layout : MonoBehaviour
                 storeIngredient = null;
                 storeStick = null;
                 CreatedFood = null;
-                
             }
             else
             {
