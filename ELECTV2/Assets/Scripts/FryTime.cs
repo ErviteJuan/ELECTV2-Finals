@@ -6,6 +6,7 @@ public class FryTime : MonoBehaviour
 {
     [HideInInspector] public Collider2D FoodCollider;
     public GameObject TextSpawn;
+    public AudioSource SoundFrying;
     public float Timer;
     public float FryPhase;
     public float FryLimit;
@@ -23,6 +24,7 @@ public class FryTime : MonoBehaviour
 
     private void Update()
     {
+        SoundFrying.loop = IsFrying;
         if (IsFrying)
         {
             FryTimer();
@@ -46,6 +48,7 @@ public class FryTime : MonoBehaviour
             {
                 Debug.Log("Sent to table!");
                 IsFrying = false;
+                SoundFrying.Stop();
                 layout.CurrentlyInGrill -= 1;
                 gameObject.transform.position = new Vector3(Random.Range(xRange,-xRange), 4.0f);
                 StartCoroutine(WaitCoroutine());     
@@ -64,7 +67,7 @@ public class FryTime : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SpawnText();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         //Unsubscribes to swipeControl to avoid errors
         SwipeControl.SwipeAction -= SwipeServe;
         Destroy(this.gameObject);

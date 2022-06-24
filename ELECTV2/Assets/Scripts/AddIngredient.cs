@@ -9,6 +9,7 @@ public class EvtIngredient : UnityEvent<Ingredient> { }
 public class AddIngredient : MonoBehaviour
 {
     public Ingredient Ingredient;
+    public AudioSource SoundPlastic;
     public EvtIngredient EvtAddFood;
     [SerializeField] Collider2D Source;
     [SerializeField] bool SwipeLeft;
@@ -32,11 +33,13 @@ public class AddIngredient : MonoBehaviour
             {
                 //Debug.Log("added " + Ingredient.IngredientName + " with " + _dir + " direction");
                 EvtAddFood.Invoke(Ingredient);
+                SoundPlastic.Play();
             }
             else if (_dir == SwipeDirection.Right && !SwipeLeft)
             {
                 //Debug.Log("added " + Ingredient.IngredientName + " with " + _dir + " direction");
                 EvtAddFood.Invoke(Ingredient);
+                SoundPlastic.Play();
             }
         }
     }

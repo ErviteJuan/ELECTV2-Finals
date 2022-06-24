@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class FryDetector : MonoBehaviour
 {
+    public AudioSource SoundFry;
     FryTime FryTimer;
     Collider2D GrillCollider;
 
     private void Start()
     {
+        SoundFry = GetComponent<AudioSource>();
         FryTimer = gameObject.GetComponent<FryTime>();
         GrillCollider = GameObject.Find("Grill").GetComponent<Collider2D>();
     }
@@ -20,6 +22,7 @@ public class FryDetector : MonoBehaviour
         {
             Debug.Log(this.name + " Is Frying!");
             FryTimer.IsFrying = true;
+            SoundFry.Play();
         }    
     }
 }
