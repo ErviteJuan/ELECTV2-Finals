@@ -5,10 +5,12 @@ using UnityEngine;
 public class FryTime : MonoBehaviour
 {
     [HideInInspector] public Collider2D FoodCollider;
+    public GameObject TextSpawn;
     public float Timer;
     public float FryPhase;
     public float FryLimit;
     public bool IsFrying;
+    [HideInInspector] public float xRange = 4;
 
     private void Start()
     {
@@ -41,9 +43,27 @@ public class FryTime : MonoBehaviour
             if (_dir == SwipeDirection.Up && Timer >= FryPhase)
             {
                 Debug.Log("Sent to table!");
-                //Thinking on editing this later so when the object gets served, it automatically disappears but sends out a text
-                gameObject.transform.position = new Vector2(0, 4.3f);
+                IsFrying = false;
+                gameObject.transform.position = new Vector3(Random.Range(xRange,-xRange), 4.0f);
+                StartCoroutine(WaitCoroutine());     
             }
         }
+    }
+
+    public void SpawnText()
+    {
+        Vector3 textPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Debug.Log(textPosition);
+        Instantiate(TextSpawn, textPosition, Quaternion.identity, transform);
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        SpawnText();
+        yield return new WaitForSeconds(0.5f);
+        //Unsubscribes to swipeControl to avoid errors
+        SwipeControl.SwipeAction -= SwipeServe;
+        Destroy(this.gameObject);
     }
 }
