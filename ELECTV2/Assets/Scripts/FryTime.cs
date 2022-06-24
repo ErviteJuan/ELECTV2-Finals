@@ -10,12 +10,14 @@ public class FryTime : MonoBehaviour
     public float FryPhase;
     public float FryLimit;
     public bool IsFrying;
+    Layout layout;
     [HideInInspector] public float xRange = 4;
 
     private void Start()
     {
         Timer = 0;
         FoodCollider = gameObject.GetComponent<Collider2D>();
+        layout = FindObjectOfType<Layout>();
         SwipeControl.SwipeAction += SwipeServe;
     }
 
@@ -44,6 +46,7 @@ public class FryTime : MonoBehaviour
             {
                 Debug.Log("Sent to table!");
                 IsFrying = false;
+                layout.CurrentlyInGrill -= 1;
                 gameObject.transform.position = new Vector3(Random.Range(xRange,-xRange), 4.0f);
                 StartCoroutine(WaitCoroutine());     
             }

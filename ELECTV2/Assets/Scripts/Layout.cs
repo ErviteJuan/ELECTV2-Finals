@@ -8,8 +8,8 @@ public class Layout : MonoBehaviour
     public Ingredient storeIngredient;
     public Collider2D ColliderSource;
     public GameObject Table;
+    public int CurrentlyInGrill;
     GameObject CreatedFood;
-    int CurrentlyInGrill;
     [SerializeField] AddIngredient PileStick;
     [SerializeField] AddIngredient PileBanana;
     [SerializeField] AddIngredient PileKamote;
