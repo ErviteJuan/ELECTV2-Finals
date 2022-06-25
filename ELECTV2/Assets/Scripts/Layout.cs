@@ -9,7 +9,7 @@ public class Layout : MonoBehaviour
     public Collider2D ColliderSource;
     public GameObject Table;
     public int CurrentlyInGrill;
-    GameObject CreatedFood;
+    [HideInInspector] public GameObject CreatedFood;
     [SerializeField] AddIngredient PileStick;
     [SerializeField] AddIngredient PileBanana;
     [SerializeField] AddIngredient PileKamote;
@@ -21,10 +21,11 @@ public class Layout : MonoBehaviour
 
     public void AddStick(Stick _s)
     {
-        if (storeStick == null)
+        if (storeIngredient != null)
         {
             Debug.Log("Added " + _s.IngredientName);
             storeStick = _s;
+            CreatedFood.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 

@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sticks Piece
       objectReference: {fileID: 0}
+    - target: {fileID: 541022051129334134, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
       propertyPath: m_RootOrder
       value: 0
