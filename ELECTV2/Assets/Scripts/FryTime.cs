@@ -36,6 +36,10 @@ public class FryTime : MonoBehaviour
     {
         Timer += 1 * Time.deltaTime;
         Timer = Mathf.Clamp(Timer, 0, FryLimit);
+        if(Timer >= FryPhase)
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("Cooked");
+        }
     }
 
     public void SwipeServe(SwipeDirection _dir)

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8925904763192611222}
   - component: {fileID: -2718040430518605214}
   - component: {fileID: -8027698486159616036}
+  - component: {fileID: 3768036840463078419}
   m_Layer: 0
   m_Name: Kamote Piece
   m_TagString: Kamote
@@ -31,10 +32,10 @@ Transform:
   m_GameObject: {fileID: 6156791848954842182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.308997, y: 0.5587119, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6892763595757261858}
+  - {fileID: 6755792551959512961}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8773585, g: 0.6497419, b: 0.6497419, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3783d034f30d85a43abbbf7ffc3cc90e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2226795, y: -0.052586973}
+  m_Offset: {x: 0.2226795, y: -0.041808724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -114,7 +115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4453588, y: 2.1569118}
+  m_Size: {x: 1.4453588, y: 1.0144155}
   m_EdgeRadius: 0
 --- !u!50 &-8371876232362728423
 Rigidbody2D:
@@ -266,7 +267,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1537862162467258628
+--- !u!95 &3768036840463078419
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156791848954842182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa776d754b9af564a9d8cc9f72ef8e3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1675043352572973735
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -286,20 +307,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.3401681
-      objectReference: {fileID: 0}
-    - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3157475
-      objectReference: {fileID: 0}
-    - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2748
+      value: 0.507
       objectReference: {fileID: 0}
     - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0501
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -335,8 +348,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
---- !u!4 &6892763595757261858 stripped
+--- !u!4 &6755792551959512961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5404203578774197542, guid: 701de53cbf2d11c4888c31acfd79f70d, type: 3}
-  m_PrefabInstance: {fileID: 1537862162467258628}
+  m_PrefabInstance: {fileID: 1675043352572973735}
   m_PrefabAsset: {fileID: 0}
